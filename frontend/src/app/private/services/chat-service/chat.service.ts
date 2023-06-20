@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
-import { MessageI, MessagePaginateI } from 'src/app/base_module/model/message.interface';
-import { RoomI, RoomPaginateI } from 'src/app/base_module/model/room.interface';
-import { CustomSocket } from '../../../base_module/sockets/custom-socket';
+import { MessageI, MessagePaginateI } from 'src/app/model/message.interface';
+import { RoomI, RoomPaginateI } from 'src/app/model/room.interface';
+import { CustomSocket } from '../../sockets/custom-socket';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +25,6 @@ export class ChatService {
   }
 
   leaveRoom(room: RoomI) {
-    console.warn(room)
     this.socket.emit('leaveRoom', room);
   }
 
@@ -34,7 +33,6 @@ export class ChatService {
   }
 
   getMyRooms(): Observable<RoomPaginateI> {
-
     return this.socket.fromEvent<RoomPaginateI>('rooms');
   }
 
@@ -48,7 +46,5 @@ export class ChatService {
       duration: 2000, horizontalPosition: 'right', verticalPosition: 'top'
     });
   }
-
-
 
 }

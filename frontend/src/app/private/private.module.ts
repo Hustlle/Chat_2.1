@@ -18,9 +18,6 @@ import {MatIconModule} from '@angular/material/icon';
 import { SelectUsersComponent } from './components/select-users/select-users.component';
 import { ChatRoomComponent } from './components/chat-room/chat-room.component';
 import { ChatMessageComponent } from './components/chat-message/chat-message.component';
-import { NavBarComponent } from './components/board-chat-room/nav-bar.component';
-import { NavBarTopComponent } from './components/nav-bar-top/nav-bar-top.component';
-import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -28,9 +25,7 @@ import {MatMenuModule} from "@angular/material/menu";
     CreateRoomComponent,
     SelectUsersComponent,
     ChatRoomComponent,
-    ChatMessageComponent,
-    NavBarComponent,
-    NavBarTopComponent
+    ChatMessageComponent
   ],
   imports: [
     CommonModule,
@@ -44,8 +39,7 @@ import {MatMenuModule} from "@angular/material/menu";
     MatInputModule,
     MatChipsModule,
     MatAutocompleteModule,
-    MatIconModule,
-    MatMenuModule
+    MatIconModule
   ]
 })
 export class PrivateModule { }
